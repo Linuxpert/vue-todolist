@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>to do lista</title>
 </head>
 <body>
     <div id="app">
-        <ul>
-            <li v-for="task in tasks">
+        <input type="text" v-model="newTask.text" placeholder="inserisci nuovo task" @keyup.enter="aggiungiTask">
+        <button @click="aggiungiTask">aggiungi task</button>
+
+        <div v-if="tasks.length === 0">La lista è vuota</div>
+        <ul v-esle>
+            <li v-for="task, i in tasks" :mykey="i" :class="task.done === true ? 'done' : '' ">
                 {{task.text}}
+                <span @click="doneItem(i)">&check;</span>
+                <span @click="removeItem(i)">&#10007;</span>
             </li>
         </ul>
 
