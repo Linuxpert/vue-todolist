@@ -1,7 +1,23 @@
 span {
     cursor: pointer;
+    font-size: 25px;
 }
 
 .done {
     text-decoration: line-through;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+#app {
+    background-color: orange;
+    padding: 5% 10%;
+}
+
+#app ul li {
+    font-size: 25px;
 }

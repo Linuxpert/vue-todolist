@@ -8,20 +8,25 @@
     <title>to do lista</title>
 </head>
 <body>
-    <div id="app">
-        <input type="text" v-model="newTask.text" placeholder="inserisci nuovo task" @keyup.enter="aggiungiTask">
-        <button @click="aggiungiTask">aggiungi task</button>
-
-        <div v-if="tasks.length === 0">La lista è vuota</div>
-        <ul v-esle>
-            <li v-for="task, i in tasks" :mykey="i" :class="task.done === true ? 'done' : '' ">
-                {{task.text}}
-                <span @click="doneItem(i)">&check;</span>
-                <span @click="removeItem(i)">&#10007;</span>
-            </li>
-        </ul>
-
+    
+    <div class="container">
+        <div id="app">
+            <h1>To do list</h1>
+            <input type="text" v-model="newTask.text" placeholder="inserisci nuovo task" @keyup.enter="aggiungiTask">
+            <button @click="aggiungiTask">aggiungi task</button>
+    
+            <div v-if="tasks.length === 0">La lista è vuota, sei libero!!</div>
+            <ul v-esle>
+                <li v-for="task, i in tasks" :mykey="i" :class="task.done === true ? 'done' : '' ">
+                    {{task.text}}
+                    <span @click="doneItem(i)">&check;</span>
+                    <span @click="removeItem(i)">&#10007;</span>
+                </li>
+            </ul>
+    
+        </div>
     </div>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="js/script.js"></script>
