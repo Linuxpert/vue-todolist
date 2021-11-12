@@ -4,25 +4,25 @@ var todolist = new Vue({
         newTask: [
             {
                 text:"",
-                done:"false"
+                done: false
             },
         ],
         tasks: [
             {
                 text: 'andare a correre',
-                done: 'false'
+                done: false
             },
             {
                 text: 'fare la spesa',
-                done: 'false'
+                done: false
             },
             {
                 text: 'fare il bucato',
-                done: 'false'
+                done: false
             },
             {
                 text: 'sistemare la stanza',
-                done: 'false'
+                done: false
             },
         ],
     },
@@ -34,7 +34,7 @@ var todolist = new Vue({
             this.tasks.push(this.newTask);
             this.newTask = {
                 text:"",
-                done:"false"
+                done: false
             };
         },
         doneItem(index){
